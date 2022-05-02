@@ -31,6 +31,7 @@ def bus_stations(request):
     if type(DATA_SET) not in (FileNotFoundError, None):
         current_page = int(request.GET.get('page', 1))
         paginator = Paginator(DATA_SET, 10)
+
         page = paginator.get_page(current_page)
 
         context = {
